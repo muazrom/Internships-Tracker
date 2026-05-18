@@ -1,0 +1,111 @@
+<!DOCTYPE strict html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-rocket"></i>
+                <h1>Internship Tracker</h1>
+            </div>
+            <button id="add-btn" class="primary-btn"><i class="fa-solid fa-plus"></i> New Application</button>
+        </header>
+
+        <main class="board">
+            <!-- Applied Column -->
+            <div class="column" id="col-applied" data-status="Applied">
+                <div class="column-header">
+                    <h2><span class="dot applied-dot"></span> Applied</h2>
+                    <span class="count" id="count-applied">0</span>
+                </div>
+                <div class="card-list" id="list-applied"></div>
+            </div>
+
+            <!-- Interview Column -->
+            <div class="column" id="col-interview" data-status="Interview">
+                <div class="column-header">
+                    <h2><span class="dot interview-dot"></span> Interview</h2>
+                    <span class="count" id="count-interview">0</span>
+                </div>
+                <div class="card-list" id="list-interview"></div>
+            </div>
+
+            <!-- Offer Column -->
+            <div class="column" id="col-offer" data-status="Offer">
+                <div class="column-header">
+                    <h2><span class="dot offer-dot"></span> Offer</h2>
+                    <span class="count" id="count-offer">0</span>
+                </div>
+                <div class="card-list" id="list-offer"></div>
+            </div>
+
+            <!-- Rejected Column -->
+            <div class="column" id="col-rejected" data-status="Rejected">
+                <div class="column-header">
+                    <h2><span class="dot rejected-dot"></span> Rejected</h2>
+                    <span class="count" id="count-rejected">0</span>
+                </div>
+                <div class="card-list" id="list-rejected"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Create/Edit -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">New Application</h2>
+                <button class="close-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="app-form">
+                <input type="hidden" id="app-id">
+                
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" required placeholder="e.g. Google">
+                </div>
+                
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" id="role" required placeholder="e.g. Software Engineer Intern">
+                </div>
+                
+                <div class="form-group row">
+                    <div class="half-width">
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Offer">Offer</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="half-width">
+                        <label for="date_applied">Date Applied</label>
+                        <input type="date" id="date_applied" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes (Optional)</label>
+                    <textarea id="notes" rows="3" placeholder="Interviewer names, next steps..."></textarea>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="secondary-btn" id="cancel-btn">Cancel</button>
+                    <button type="submit" class="primary-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
