@@ -42,7 +42,7 @@ async function fetchApplications() {
 
 // Render the kanban board
 function renderBoard() {
-    const statuses = ['Applied', 'Interview', 'Offer', 'Rejected'];
+    const statuses = ['Wishlist', 'Applied', 'Interview', 'Offer', 'Rejected'];
     
     statuses.forEach(status => {
         const listEl = document.getElementById(`list-${status.toLowerCase()}`);

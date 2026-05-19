@@ -1,5 +1,6 @@
 <!DOCTYPE strict html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="app-container">
         <header>
@@ -14,10 +16,31 @@
                 <i class="fa-solid fa-rocket"></i>
                 <h1>Internship Tracker</h1>
             </div>
-            <button id="add-btn" class="primary-btn"><i class="fa-solid fa-plus"></i> New Application</button>
+            <div class="header-actions">
+                <div class="quick-links">
+                    <a href="https://github.com/muazrom" target="_blank" class="link-icon" title="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/muazrom10/" target="_blank" class="link-icon"
+                        title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://my.jobstreet.com/profile/me" target="_blank" class="link-icon" title="JobStreet"><i
+                            class="fa-solid fa-briefcase"></i></a>
+                    <a href="#" target="_blank" class="link-icon" title="Resume"><i
+                            class="fa-solid fa-file-pdf"></i></a>
+                </div>
+                <button id="add-btn" class="primary-btn"><i class="fa-solid fa-plus"></i> New Application</button>
+            </div>
         </header>
 
         <main class="board">
+            <!-- Wishlist Column -->
+            <div class="column" id="col-wishlist" data-status="Wishlist">
+                <div class="column-header">
+                    <h2><span class="dot wishlist-dot"></span> Wishlist</h2>
+                    <span class="count" id="count-wishlist">0</span>
+                </div>
+                <div class="card-list" id="list-wishlist"></div>
+            </div>
+
             <!-- Applied Column -->
             <div class="column" id="col-applied" data-status="Applied">
                 <div class="column-header">
@@ -65,21 +88,22 @@
             </div>
             <form id="app-form">
                 <input type="hidden" id="app-id">
-                
+
                 <div class="form-group">
                     <label for="company">Company</label>
                     <input type="text" id="company" required placeholder="e.g. Google">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="role">Role</label>
                     <input type="text" id="role" required placeholder="e.g. Software Engineer Intern">
                 </div>
-                
+
                 <div class="form-group row">
                     <div class="half-width">
                         <label for="status">Status</label>
                         <select id="status">
+                            <option value="Wishlist">Wishlist</option>
                             <option value="Applied">Applied</option>
                             <option value="Interview">Interview</option>
                             <option value="Offer">Offer</option>
@@ -96,7 +120,7 @@
                     <label for="notes">Notes (Optional)</label>
                     <textarea id="notes" rows="3" placeholder="Interviewer names, next steps..."></textarea>
                 </div>
-                
+
                 <div class="modal-actions">
                     <button type="button" class="secondary-btn" id="cancel-btn">Cancel</button>
                     <button type="submit" class="primary-btn">Save</button>
@@ -107,4 +131,5 @@
 
     <script src="/static/script.js"></script>
 </body>
+
 </html>

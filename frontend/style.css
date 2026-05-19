@@ -14,6 +14,7 @@
     --primary-btn-text: #09090b;
     --primary-btn-hover: #e4e4e7;
     
+    --status-wishlist: #3b82f6;
     --status-applied: #a1a1aa;
     --status-interview: #eab308;
     --status-offer: #22c55e;
@@ -50,6 +51,29 @@ header {
     margin-bottom: 3rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border-color);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.quick-links {
+    display: flex;
+    gap: 1rem;
+    padding-right: 1.5rem;
+    border-right: 1px solid var(--border-color);
+}
+
+.link-icon {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    transition: color 0.15s;
+}
+
+.link-icon:hover {
+    color: var(--text-primary);
 }
 
 .logo {
@@ -107,7 +131,7 @@ button {
 /* Board */
 .board {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
     align-items: start;
 }
@@ -147,6 +171,7 @@ button {
     display: inline-block;
 }
 
+.wishlist-dot { background-color: var(--status-wishlist); }
 .applied-dot { background-color: var(--status-applied); }
 .interview-dot { background-color: var(--status-interview); }
 .offer-dot { background-color: var(--status-offer); }
